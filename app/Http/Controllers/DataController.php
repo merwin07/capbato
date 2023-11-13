@@ -57,7 +57,7 @@ class DataController extends Controller
 class RealTimeClockController extends Controller
 {
     public function index()
-    {
+    {   //NANANAN
         $response = Http::get('https://worldtimeapi.org/api/timezone/Asia/Manila');
 
         if ($response->successful()) {
