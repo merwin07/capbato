@@ -25,15 +25,20 @@ class RealTimeClockController extends Controller
 
     public function updateDataIfNeeded()
     {
+        
+
+        $currentDate = now()->format('Y-m-d');
         $currentTime = now()->format('H:i');
-        $availCheckin = '17:24';
-        if ($currentTime === $avail) {
+
+        if ($currentDate === '2023-11-15' && $currentTime === '17:05') {
             // Update the 'time' column in the 'data' table
-            Data::find(1)->update(['time' => 1]);
+            Data::find(1)->update(['time' => 0]);
             return response()->json(['success' => true]);
         }
 
         return response()->json(['success' => false]);
+
+
     }
 
 }

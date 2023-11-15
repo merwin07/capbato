@@ -24,15 +24,17 @@ Route::get('/', function () {
     return view('real-time-clock');
 });
 
-Route::get('/real-time-clock', [RealTimeClockController::class, 'index']);
 
-
-
-Route::get('/update-data', [DataController::class, 'index']);
 Route::post('/update-data', [DataController::class, 'updateData']);
+
+
+Route::get('/real-time-clock', [RealTimeClockController::class, 'index']);
+Route::get('/update-data', [DataController::class, 'index']);
+
 // routes/web.php
 
 
 Route::get('/update-data-if-needed', [RealTimeClockController::class, 'updateDataIfNeeded']);
-
 Route::get('/update-data', [DataController::class, 'updateData']);
+
+
